@@ -6,7 +6,7 @@ This **ELT** (Extract Load Transform) pipeline using Apache Airflow to scrape pr
 ![ELT Pipeline](workflow_dag.jpg)
 
 **`extract_task` >> `load_task` >> `transform_task`**
-### ⛓️ Task Dependencies
+## ⛓️ Task Dependencies
 
 - **`extract_task` → `load_task`**
   - `extract_task` is the **upstream** of `load_task`
@@ -212,4 +212,36 @@ Common tasks in **`transform_task`** include:
 - **Data Enrichment**: Adding additional data for deeper analysis.
 
 This transformation step prepares the data for use in reporting, visualization, or further analysis.
-
+## Installation
+**Clone the Repository:**
+   ```bash
+   git clone https://github.com/rosaihzaa/simple-airflow-pipeline.git
+   ```
+**Create a Virtual Environment:**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+   ```
+**Install Dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+**Set up Google Cloud Authentication:**
+   ```bash
+   gcloud auth activate-service-account --key-file=your-service-account-key.json
+   ```
+**Install Apache Airflow:**
+   ```bash
+   pip install apache-airflow
+   ```
+**Initialize Airflow Database:**
+   ```bash
+   airflow db init
+   ```
+**Start Airflow:**
+   Run the Airflow web server and scheduler.
+   ```bash
+   airflow webserver --port 8080
+   airflow scheduler
+   ```
+After these steps, the pipeline should be ready to run. You can monitor and trigger the DAG from the Airflow web UI at [http://localhost:8080](http://localhost:8080).
