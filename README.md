@@ -209,7 +209,6 @@ Common tasks in **`transform_task`** include:
 - **Filtering**: Removing unnecessary data.
 - **Aggregation**: Summing or averaging values for analysis.
 - **Normalization**: Standardizing the format or scale of the data.
-- **Data Enrichment**: Adding additional data for deeper analysis.
 
 This transformation step prepares the data for use in reporting, visualization, or further analysis.
 ## Installation
