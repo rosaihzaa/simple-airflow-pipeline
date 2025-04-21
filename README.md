@@ -2,7 +2,7 @@
 
 This **ELT** (Extract Load Transform) pipeline using Apache Airflow to scrape property data from [Properstar](https://www.properstar.com/), load it into BigQuery, and transform the data with SQL.
 
-## 🔗Pipeline Overview
+## ⛓️ Pipeline Overview
 ![ELT Pipeline](workflow_dag.jpg)
 
 **`extract_task` >> `load_task` >> `transform_task`**
