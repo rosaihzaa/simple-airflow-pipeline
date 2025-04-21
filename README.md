@@ -227,7 +227,7 @@ This transformation step prepares the data for use in reporting, visualization, 
    ```
 **Set up Google Cloud Authentication:**
    ```bash
-   gcloud auth activate-service-account --key-file=your-service-account-key.json
+   gcloud auth activate-service-account (authentification of your gcloud)
    ```
 **Install Apache Airflow:**
    ```bash
