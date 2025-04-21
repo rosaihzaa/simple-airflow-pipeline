@@ -219,7 +219,7 @@ This transformation step prepares the data for use in reporting, visualization, 
 **Create a Virtual Environment:**
    ```bash
    python -m venv venv
-   source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+   source venv/bin/activate  
    ```
 **Install Dependencies:**
    ```bash
