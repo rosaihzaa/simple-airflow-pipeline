@@ -1,8 +1,8 @@
 import os
 import sys
 from airflow.providers.google.cloud.operators.bigquery import BigQueryInsertJobOperator
-from houseELT.credentials import credentialBq
-from houseELT.queryBq import queryBigquery 
+from credentials import credentialBq
+from queryBq import queryBigquery 
 from google.cloud import bigquery
 from datetime import datetime
 import pandas as pd
@@ -20,7 +20,6 @@ import asyncio
 import aiohttp
 import nest_asyncio
 
-sys.path.append(os.path.join(os.path.dirname(__file__), 'houseELT'))
 
 
 
@@ -32,7 +31,7 @@ headers = {
         "referer": "https://www.google.com",
         "connection": "keep-alive"
     }
-output_path = '/home/rosaihzaa/airflow/data/houses_raw.csv'
+output_path = 'yourpath/houses_raw.csv'
 def extract_data1():
 
     house_link = []
@@ -152,11 +151,11 @@ def extract_data2():
 
 def load_data():
     data_house = pd.read_csv(output_path)
-    project_id = 'bank-marketing-project-446413'
-    dataset_id = 'houses'
-    table_id = 'house_airflow'
+    project_id = 'yourprojectid'
+    dataset_id = 'yourdatasetid'
+    table_id = 'yourtableid'
     
-    client = bigquery.Client(project=project_id, credentials=credentialBq())
+    client = bigquery.Client(project=project_id, credentials=credentialBq()) #credentialBq is file json from credential bigquery
     table_ref = f'{project_id}.{dataset_id}.{table_id}'
 
     job_config = bigquery.LoadJobConfig(
