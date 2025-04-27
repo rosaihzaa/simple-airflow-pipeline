@@ -1,14 +1,9 @@
-import sys
-import os
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.providers.google.cloud.operators.bigquery import BigQueryInsertJobOperator
 from google.cloud import bigquery
-from houseELT.ELTv1 import extract_data1, extract_data2, load_data, transform_data
+from ELTv1 import extract_data1, extract_data2, load_data, transform_data
 from datetime import timedelta, datetime
-
-sys.path.append(os.path.join(os.path.dirname(__file__), 'houseELT'))
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/home/rosaihzaa/airflow/credentials/bank-marketing-project-446413-5e849a5d00ce.json"
 
 
 default_args = {
@@ -44,7 +39,7 @@ with DAG(
                     }
             },
             location='US',
-            project_id='bank-marketing-project-446413'
+            project_id='yourproject-id'
             )
         
     
